@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Colors home</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name="description" content="">
+    <style>
+        html,
+        body {
+            width: 100%;
+        }
+
+        #app {
+            display: flex;
+            flex-flow: column nowrap;
+            width: 100%;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        #color-details {
+            width: 50%;
+            height: 300px;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        #color-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        #color-section {
+            width: 50%;
+            height: 150px;
+            border: 2px solid;
+        }
+
+        .colors-links-list li {
+            margin: 10px 0px;
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            #color-details {
+                width: 30%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Colors home</h1>
+        <div id="color-details">
+            <div id="color-title"></div>
+            <div id="color-section"></div>
+        </div>
+        <div>
+            <h3>Checkout the other colors</h3>
+            <ul class="colors-links-list">
+                <li><a href="https://devdxb2.1stg.one/#!/color/default"
+                        onclick="return reloadOnClickOfColorLink()">default</a></li>
+                <li><a href="https://devdxb2.1stg.one/#!/color/one" onclick="return reloadOnClickOfColorLink()">one</a>
+                </li>
+                <li><a href="https://devdxb2.1stg.one/#!/color/two" onclick="return reloadOnClickOfColorLink()">two</a>
+                </li>
+                <li><a href="https://devdxb2.1stg.one/#!/color/three"
+                        onclick="return reloadOnClickOfColorLink()">three</a>
+                </li>
+                <li><a href="https://devdxb2.1stg.one/#!/color/four"
+                        onclick="return reloadOnClickOfColorLink()">four</a>
+                </li>
+                <li><a href="https://devdxb2.1stg.one/#!/color/five"
+                        onclick="return reloadOnClickOfColorLink()">five</a>
+                </li>
+                <li><a href="https://devdxb2.1stg.one/#!/color/six" onclick="return reloadOnClickOfColorLink()">six</a>
+                </li>
+                <li><a href="https://devdxb2.1stg.one/#!/color/seven"
+                        onclick="return reloadOnClickOfColorLink()">seven</a>
+                </li>
+                <li><a href="https://devdxb2.1stg.one/#!/color/eight"
+                        onclick="return reloadOnClickOfColorLink()">eight</a>
+                </li>
+                <li><a href="https://devdxb2.1stg.one/#!/color/nine"
+                        onclick="return reloadOnClickOfColorLink()">nine</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+
+        function reloadOnClickOfColorLink() {
+            setTimeout(() => { window.location.reload(); }, 10);
+        }
+
+        const colorCodesMap = {
+            default: { name: "ZESO7zzYJH", code: "#ffe4c4" },
+            one: { name: "8QBciGnMPe", code: "#800000" },
+            two: { name: "rmmjGX2Vg4", code: "#1e90ff" },
+            three: { name: "lV83nADSSY", code: "#dc143c" },
+            four: { name: "FrbcZyhUDk", code: "#008000" },
+            five: { name: "HV1WWNdjmb", code: "#ffff00" },
+            six: { name: "o3cveFH9YS", code: "#d2691e" },
+            seven: { name: "ZOTDC9LHOq", code: "#556b2f" },
+            eight: { name: "mqdVQcsR7I", code: "#8a2be2" },
+            nine: { name: "vbjwcqj3dy", code: "#9acd32" },
+        }
+        // #!/color/five
+        let currentColor = colorCodesMap.default;
+        const hashPath = window.location.hash;
+        if (hashPath) {
+            const key = hashPath.split('/')[2];
+            const colorCodeValue = colorCodesMap[key];
+            if (colorCodeValue) {
+                currentColor = colorCodeValue;
+            }
+        }
+
+        document.title = `Colors home - ${currentColor.name}`
+
+        const colorTitleContent = `My favourite color is ${currentColor.name} !`;
+        const colorTitleEl = document.querySelector('#color-title');
+        colorTitleEl.innerHTML = colorTitleContent;
+
+        document.querySelector('meta[name="description"]').setAttribute("content", colorTitleContent);
+
+        const colorSectionEl = document.querySelector('#color-section');
+        colorSectionEl.style.borderColor = currentColor.code;
+        colorSectionEl.style.backgroundColor = currentColor.code;
+
+    </script>
+</body>
+
+</html>
