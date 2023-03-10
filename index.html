@@ -45,6 +45,19 @@
             margin: 10px 0px;
         }
 
+        #image-section {
+            height: 75px;
+            width: 75px;
+            display: flex;
+            flex-flow: row nowrap;
+            margin: 10px 0px;
+        }
+
+        #image-element {
+            height: 75px;
+            width: 75px;
+        }
+
 
         @media only screen and (max-width: 600px) {
             #color-details {
@@ -59,6 +72,9 @@
         <h1>Colors home</h1>
         <div id="color-details">
             <div id="color-title"></div>
+            <div id="image-section">
+                <img src="" id="image-element" />
+            </div>
             <div id="color-section"></div>
         </div>
         <div>
@@ -101,16 +117,16 @@
         }
 
         const colorCodesMap = {
-            default: { name: "ZESO7zzYJH", code: "#ffe4c4" },
-            one: { name: "8QBciGnMPe", code: "#800000" },
-            two: { name: "rmmjGX2Vg4", code: "#1e90ff" },
-            three: { name: "lV83nADSSY", code: "#dc143c" },
-            four: { name: "FrbcZyhUDk", code: "#008000" },
-            five: { name: "HV1WWNdjmb", code: "#ffff00" },
-            six: { name: "o3cveFH9YS", code: "#d2691e" },
-            seven: { name: "ZOTDC9LHOq", code: "#556b2f" },
-            eight: { name: "mqdVQcsR7I", code: "#8a2be2" },
-            nine: { name: "vbjwcqj3dy", code: "#9acd32" },
+            default: { name: "ZESO7zzYJH", code: "#ffe4c4", image: "images/tiger.jpg" },
+            one: { name: "8QBciGnMPe", code: "#800000", image: "images/apple.jpg" },
+            two: { name: "rmmjGX2Vg4", code: "#1e90ff", image: "images/banana.jpg" },
+            three: { name: "lV83nADSSY", code: "#dc143c", image: "images/grapes.png" },
+            four: { name: "FrbcZyhUDk", code: "#008000", image: "images/chilli.jpg" },
+            five: { name: "HV1WWNdjmb", code: "#ffff00", image: "images/potato.jpg" },
+            six: { name: "o3cveFH9YS", code: "#d2691e", image: "images/tomato.png" },
+            seven: { name: "ZOTDC9LHOq", code: "#556b2f", image: "images/cauliflower.jpeg" },
+            eight: { name: "mqdVQcsR7I", code: "#8a2be2", image: "images/mango.jpg" },
+            nine: { name: "vbjwcqj3dy", code: "#9acd32", image: "images/pomogrenate.jpg" },
         }
         // #!/color/five
         let currentColor = colorCodesMap.default;
@@ -125,11 +141,17 @@
 
         document.title = `Colors home - ${currentColor.name}`
 
-        const colorTitleContent = `My favourite color is ${currentColor.name} !`;
+        const imageName = (currentColor.image.split('/')[1]).split('.')[0];
+
+        const colorTitleContent = `The code of this color is ${currentColor.name}. Below image is of ${imageName}`;
         const colorTitleEl = document.querySelector('#color-title');
         colorTitleEl.innerHTML = colorTitleContent;
 
         document.querySelector('meta[name="description"]').setAttribute("content", colorTitleContent);
+
+
+        const imageEl = document.querySelector('#image-element');
+        imageEl.setAttribute("src", currentColor.image);
 
         const colorSectionEl = document.querySelector('#color-section');
         colorSectionEl.style.borderColor = currentColor.code;
