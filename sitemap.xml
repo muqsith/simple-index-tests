@@ -53,4 +53,51 @@
   <lastmod>2023-03-08T11:49:36.446Z</lastmod>
 </url>
 
+<!-- Product Page Urls -->
+
+<url>
+  <loc>https://devdxb2.1stg.one/shop.html#!/products/potato</loc>
+  <lastmod>2023-03-21</lastmod>
+</url>
+
+<url>
+  <loc>https://devdxb2.1stg.one/shop.html#!/products/banana</loc>
+  <lastmod>2023-03-21</lastmod>
+</url>
+
+<url>
+  <loc>https://devdxb2.1stg.one/shop.html#!/products/tomato</loc>
+  <lastmod>2023-03-21</lastmod>
+</url>
+
+<url>
+  <loc>https://devdxb2.1stg.one/shop.html#!/products/music</loc>
+  <lastmod>2023-03-21</lastmod>
+</url>
+
+<url>
+  <loc>https://devdxb2.1stg.one/shop.html#!/products/apple</loc>
+  <lastmod>2023-03-21</lastmod>
+</url>
+
+<!-- Category Page Urls -->
+
+<url>
+  <loc>https://devdxb2.1stg.one/shop.html#!/fruits/</loc>
+  <lastmod>2023-03-21</lastmod>
+</url>
+
+<url>
+  <loc>https://devdxb2.1stg.one/shop.html#!/vegetable/</loc>
+  <lastmod>2023-03-21</lastmod>
+</url>
+
+<!-- Home Page Url -->
+
+<url>
+  <loc>https://devdxb2.1stg.one/shop.html</loc>
+  <lastmod>2023-03-21</lastmod>
+</url>
+
+
 </urlset>
